@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MY FOREVER MY ALWAYS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        overflow:hidden;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to top, #ffe6f0, #e6f0ff);
+        height:100vh;
+        text-align:center;
+    }
+
+    h1{
+        font-family:'Great Vibes', cursive;
+        font-size:50px;
+        color:#d63384;
+        margin-top:40px;
+    }
+
+    #bow{
+        font-size:120px;
+        cursor:pointer;
+        margin-top:120px;
+        transition: transform 0.3s;
+    }
+
+    #bow:hover{
+        transform: scale(1.1);
+    }
+
+    .floating{
+        position:absolute;
+        bottom:-50px;
+        font-size:25px;
+        animation: floatUp 8s linear infinite;
+        opacity:0.7;
+    }
+
+    @keyframes floatUp{
+        from{transform:translateY(0);}
+        to{transform:translateY(-110vh);}
+    }
+
+    /* After opening */
+    #mainContent{
+        display:none;
+        height:100vh;
+        width:100%;
+        box-sizing:border-box;
+        padding:30px;
+        border:15px double pink;
+        position:relative;
+        background:linear-gradient(to bottom, #fff0f6, #ffe0ec);
+    }
+
+    .loveText{
+        max-width:800px;
+        margin:auto;
+        margin-top:40px;
+        font-size:18px;
+        line-height:1.8;
+        color:#8b005d;
+    }
+
+    .heart{
+        position:absolute;
+        font-size:20px;
+        animation: rise 6s linear infinite;
+    }
+
+    @keyframes rise{
+        from{transform:translateY(0);}
+        to{transform:translateY(-100vh);}
+    }
+
+</style>
+</head>
+
+<body>
+
+<h1>MY FOREVER MY ALWAYS</h1>
+
+<div id="bow">🎀</div>
+
+<!-- floating shapes -->
+<script>
+for(let i=0;i<25;i++){
+    let f=document.createElement("div");
+    f.className="floating";
+    f.style.left=Math.random()*100+"vw";
+    f.style.animationDuration=(5+Math.random()*5)+"s";
+    f.innerHTML=Math.random()>0.5?"💗":"💙";
+    document.body.appendChild(f);
+}
+</script>
+
+<div id="mainContent">
+    <h1>To My Dearest GunaSheela ❤️</h1>
+
+    <div class="loveText">
+        For more than 20 beautiful years of my life, you have been my constant, my strength, and my peace.  
+        Every moment with you has been a blessing that I will always be grateful for.
+
+        <br><br>
+
+        I want to thank you for your patience, your care, and even for every time you scolded me — because in every word, I always felt your love and concern for me.  
+        I truly enjoyed being corrected by you, because it made me a better man.
+
+        <br><br>
+
+        I sincerely ask forgiveness for every mistake I have made.  
+        If I have ever hurt you, knowingly or unknowingly, I am deeply sorry from the bottom of my heart.
+
+        <br><br>
+
+        You are not just my wife —  
+        you are my home, my comfort, my safe place, and my forever happiness.
+
+        <br><br>
+
+        Loving you has been the greatest joy of my life.  
+        And if I had to live my life again, I would still choose you — again and again, without hesitation.
+
+        <br><br>
+
+        💖 My Forever. My Always. 💖
+    </div>
+</div>
+
+<script>
+let clickCount=0;
+let bow=document.getElementById("bow");
+let main=document.getElementById("mainContent");
+
+bow.addEventListener("click", function(){
+    clickCount++;
+    if(clickCount==3){
+        bow.style.display="none";
+        main.style.display="block";
+        document.body.style.overflow="auto";
+
+        // hearts burst
+        for(let i=0;i<80;i++){
+            let h=document.createElement("div");
+            h.className="heart";
+            let colors=["#ffb6c1","#ff69b4","#ff1493","#ffc0cb"];
+            h.style.color=colors[Math.floor(Math.random()*colors.length)];
+            h.style.left=Math.random()*100+"vw";
+            h.style.animationDuration=(4+Math.random()*4)+"s";
+            h.innerHTML="❤";
+            document.body.appendChild(h);
+        }
+    }
+});
+</script>
+
+</body>
+</html>
